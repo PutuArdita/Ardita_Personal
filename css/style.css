@@ -1,0 +1,367 @@
+:root {
+  --primary: #2c74b3;
+  --bg: rgb(10, 38, 71);
+  /* variabel warna yang bisa di panggil */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg);
+  color: white;
+  /* min-height: 2000px; */
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(255, 255, 255, 0.8);
+  /* border-bottom: 1px solid var(--primary); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* elemen logo */
+.navbar .nav-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c74b3;
+  font-style: italic;
+}
+.navbar .nav-logo span {
+  color: black;
+}
+
+/* elemen menu (isi) */
+.navbar .nav-isi a {
+  color: #0a2647;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+.navbar .nav-isi a:hover {
+  color: var(--primary);
+}
+/* animasi garis bawah pada saat hover */
+.navbar .nav-isi a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+.navbar .nav-isi a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* navbar ekstra (logo user) */
+.navbar .nav-ekstra a {
+  color: var(--bg);
+  margin: 0 0.5rem;
+}
+.navbar .nav-ekstra a:hover {
+  color: var(--primary);
+}
+#hamburger-menu {
+  display: none;
+}
+/* navbar end */
+
+/* hero section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  /* untuk vertikal dapat menggunakan align items dan display flex */
+  background-image: url("../img/img_brnd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(10, 38, 71, 0.7) 5%,
+    rgba(255, 255, 255, 0) 50%
+  );
+}
+.hero .content {
+  padding: 1.4rem 7%;
+  max-width: 50rem;
+}
+.hero .content h1 {
+  font-size: 2.5em;
+  color: rgb(19, 17, 17);
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+.hero .content h1 span {
+  color: var(--primary);
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+.hero .content p {
+  font-size: 1rem;
+  margin-top: 1rem;
+  height: 1.4rem;
+  font-weight: 100;
+  /* mix-blend-mode: difference; */
+}
+.hero .content .cta {
+  margin-top: 7rem;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+}
+/* hero section end*/
+
+/* about */
+.about,
+.galeri,
+.kontak {
+  padding: 10rem 7% 1.4rem;
+}
+.about h2,
+.galeri h2,
+.kontak h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 1.5rem;
+}
+.about .row {
+  display: flex;
+}
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+.about .row .about-img img {
+  width: 100%;
+}
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6rem;
+}
+/* about end */
+
+/* galeri */
+.galeri h3 a {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.galeri p,
+.kontak p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.galeri .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.galeri .row .gal-card {
+  text-align: center;
+  padding-bottom: 2rem;
+}
+.galeri .row .gal-card .gal-judul a {
+  margin: 0.3rem auto 0.1rem;
+}
+.galeri .row .gal-card img {
+  margin: 3rem 0.8rem 0.3rem;
+}
+/* galeri end */
+
+/* kontak section start */
+.kontak .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: var(--primary);
+  /* flex-wrap: wrap; */
+}
+.kontak .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+}
+.kontak .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.kontak .row form .input {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: var(--bg);
+  border: 1px solid #eee;
+  padding-left: 2rem;
+}
+.kontak .row form .input input {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: none;
+  color: #ffffff;
+}
+.kontak .row form .btn {
+  margin-top: 1.5rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: var(--bg);
+  cursor: pointer;
+}
+/* kontak end */
+
+/* footer start */
+footer {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1rem 0 3rem;
+  margin-top: 3rem;
+}
+footer .sosmed {
+  padding: 1rem 0;
+}
+footer .sosmed a {
+  color: #ffffff;
+  margin: 1rem;
+}
+footer .sosmed a:hover {
+  color: var(--bg);
+}
+footer .links {
+  margin-bottom: 1.4rem;
+}
+footer .links a {
+  color: #ffffff;
+  padding: 0.7rem 1rem;
+}
+footer .links a:hover {
+  color: var(--bg);
+}
+footer .cr {
+  font-size: 0.8rem;
+}
+footer .cr a {
+  color: var(--bg);
+  font-weight: 700;
+}
+/* footer end */
+/* Media Queries */
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 90%;
+  }
+}
+/* tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+  #hamburger-menu {
+    display: inline-block;
+  }
+  .navbar .nav-isi {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #ffffff;
+    width: 30rem;
+    height: 100vh;
+    transition: 0.4s;
+  }
+  .navbar .nav-isi.active {
+    right: 0;
+  }
+  .navbar .nav-isi a {
+    color: var(--bg);
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+  .navbar .nav-isi a::after {
+    transform-origin: 0 0;
+  }
+  .navbar .nav-isi a:hover::after {
+    transform: scaleX(0.2);
+  }
+  .about .row {
+    flex-wrap: wrap;
+  }
+  .about .row .about-img img {
+    height: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .about .row .content {
+    padding: 0;
+  }
+  .about .row .content h3 {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .about .row .content p {
+    font-size: 1.6rem;
+  }
+  .galeri p,
+  .kontak p {
+    font-size: 1.2rem;
+  }
+  .kontak .row {
+    flex-wrap: wrap;
+  }
+  .kontak .row .map {
+    height: 30rem;
+  }
+  .kontak .row form {
+    padding-top: 0;
+  }
+}
+/* mobile */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
